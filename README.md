@@ -60,50 +60,15 @@ MoEngage-Web-Analyzer/
 ```bash
 git clone https://github.com/your-username/MoEngage-Doc-Improver.git
 cd MoEngage-Doc-Improver
-2. Create Virtual Environment
-bash
-Copy code
-python -m venv venv
-source venv/bin/activate       # Linux/Mac
-venv\Scripts\activate          # Windows
-3. Install Dependencies
-bash
-Copy code
-pip install flask requests beautifulsoup4 textstat nltk
-python -c "import nltk; nltk.download('punkt')"
-4. Add Your Google Gemini API Key
-Get your key from: https://aistudio.google.com/app/apikey
-
-In backend/doc_analyzer.py and backend/doc_revision.py, update:
-
-python
-Copy code
-GEMINI_API_KEY = "your-gemini-api-key"
-5. Create Output Directory
-bash
-Copy code
-mkdir Output
-6. Run the App
-bash
-Copy code
-python app.py
-Open your browser at: http://127.0.0.1:5000/
-
-
-
-### 1. Navigate to the Project Directory
-
-```bash
-cd "C:\Users\Reliance Digital\WEB DEVELOPMENT\MoEngage-Web-Analyzer"
 ```
 
-### 2. Set Up Virtual Environment
-
-Ensure Python 3.8+ is installed.
+2. Create Virtual Environment
 
 ```bash
-python -m venv "C:\Users\Reliance Digital\WEB DEVELOPMENT\MI\venv"
-"C:\Users\Reliance Digital\WEB DEVELOPMENT\MI\venv\Scripts\activate"
+python -m venv venv
+source venv/bin/activate       # Linux/Mac
+venv\Scripts\activate 
+
 ```
 
 ### 3. Install Dependencies
@@ -154,9 +119,7 @@ Then visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
 ## 🎨 Design Choices
 
-* **Flask**: Chosen for simplicity and Python integration.
 * **Modular Code**: Separation of logic for maintainability.
-* **BeautifulSoup**: Lightweight HTML parsing.
 * **Google Gemini API**: For AI-based readability improvements.
 * **Dark Theme UI**: Designed with a tech-centric aesthetic.
 * **Logging**: Detailed logs for debugging and auditing.
@@ -189,23 +152,9 @@ mkdir Output
 
 ---
 
-## 🧾 Example Outputs
+## 🧾 Outputs
 
-### ✅ Example 1: Developer Portal
 
-**URL:** [https://developers.moengage.com/hc/en-us](https://developers.moengage.com/hc/en-us)
-
-* Readability Score: Flesch-Kincaid: 15.8, Gunning Fog: 18.7
-* Suggestions: Simplify tone, shorten sentences, add examples
-
-### ✅ Example 2: Delivery Types
-
-**URL:** [https://help.moengage.com/hc/en-us/articles/360058616131-Delivery-Types-MoEngage-Channels](https://help.moengage.com/hc/en-us/articles/360058616131-Delivery-Types-MoEngage-Channels)
-
-* Readability Score: Flesch-Kincaid: 12.5, Gunning Fog: 15.3
-* Suggestions: Replace jargon, use second-person, add lists
-
----
 
 ## 🌟 Future Improvements
 
@@ -217,17 +166,9 @@ mkdir Output
 
 ---
 
-## 📄 License
-
-This project is for educational and internal use. Please ensure compliance with MoEngage's documentation terms and Google Gemini API usage policies.
-
----
 
 ## 📬 Contact
 
-Created by Reliance Digital
 For queries or contributions, please open an [issue](https://github.com/your-repo/issues) or submit a [pull request](https://github.com/your-repo/pulls).
 
----
 
-Let me know if you'd like help turning this into a GitHub repository, generating a `.gitignore`, or adding badges (build, license, etc.).
