@@ -7,7 +7,7 @@ Revise Content: Simplifies text, replaces jargon, uses second-person pronouns, a
 Backend Focus: Optimized for server-side processing with modular code, detailed logging, and robust error handling.
 Output: Generates analysis_report.json, revised__content.md, revised_content.txt, and revision_result.json in the Output/ directory.
 Dependencies: Relies on BeautifulSoup, Google Gemini API, and Python libraries (requests, textstat, Flask, NLTK).
-
+----
 Project Structure
 MoEngage-Web-Analyzer/
 ├── backend/
@@ -27,6 +27,27 @@ MoEngage-Web-Analyzer/
 ├── README.md                # Project documentation
 
 Setup Instructions
+----
+MoEngage-Web-Analyzer/
+├── backend/
+│   ├── doc_analyzer.py          # Extracts and analyzes documentation content for readability, structure, and style
+│   ├── doc_revision.py          # Simplifies and revises content using Google Gemini API
+│
+├── templates/
+│   ├── index.html               # User input form to enter documentation URL
+│   ├── result.html              # Displays analysis and revised content
+│
+├── static/
+│   ├── style.css                # Dark theme styling with Roboto Mono and Montserrat fonts
+│
+├── Output/
+│   ├── analysis_report.json     # JSON report detailing readability, structure, completeness, and style
+│   ├── revised__content.md      # Revised content in Markdown format
+│   ├── revised_content.txt      # Revised content in plain text format
+│   ├── revision_result.json     # JSON showing original vs revised text mapping
+│
+├── app.py                       # Main Flask app routing input/output and backend processing
+├── README.md                    # Project documentation (this file)
 
 Navigate to Project Directory:
 cd "C:\Users\Reliance Digital\WEB DEVELOPMENT\MoEngage-Web-Analyzer"
