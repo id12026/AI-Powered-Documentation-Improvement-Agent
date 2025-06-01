@@ -254,6 +254,12 @@ mkdir Output
 
 ---
 
+📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
 ## ✍️ Author & Contact
 Feel free to reach out or contribute!
 
