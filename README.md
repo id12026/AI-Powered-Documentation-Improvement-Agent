@@ -50,6 +50,47 @@ MoEngage-Web-Analyzer/
 
 ## ⚙️ Setup Instructions
 
+
+---
+
+## 🚀 How to Set It Up
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/your-username/MoEngage-Doc-Improver.git
+cd MoEngage-Doc-Improver
+2. Create Virtual Environment
+bash
+Copy code
+python -m venv venv
+source venv/bin/activate       # Linux/Mac
+venv\Scripts\activate          # Windows
+3. Install Dependencies
+bash
+Copy code
+pip install flask requests beautifulsoup4 textstat nltk
+python -c "import nltk; nltk.download('punkt')"
+4. Add Your Google Gemini API Key
+Get your key from: https://aistudio.google.com/app/apikey
+
+In backend/doc_analyzer.py and backend/doc_revision.py, update:
+
+python
+Copy code
+GEMINI_API_KEY = "your-gemini-api-key"
+5. Create Output Directory
+bash
+Copy code
+mkdir Output
+6. Run the App
+bash
+Copy code
+python app.py
+Open your browser at: http://127.0.0.1:5000/
+
+
+
 ### 1. Navigate to the Project Directory
 
 ```bash
