@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis and Revision Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis and Revision Results</h1>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+            <p>Ensure the URL is accessible and API keys are valid.</p>
+        {% endif %}
+        {% if analysis_report %}
+            <h2>Analysis Report:</h2>
+            <pre>{{ analysis_report }}</pre>
+        {% endif %}
+        {% if revision_result %}
+            <h2>Revision Result:</h2>
+            <pre>{{ revision_result }}</pre>
+        {% endif %}
+        {% if revised_text %}
+            <h2>Revised Content:</h2>
+            <pre>{{ revised_text }}</pre>
+        {% endif %}
+        <p><a href="/">Analyze Another URL</a></p>
+    </div>
+</body>
+</html>

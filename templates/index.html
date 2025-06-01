@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Documentation Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI-Powered Documentation Analyzer</h1>
+        <p>Enter any Documentation URL to analyze and enhance its content:</p>
+        <form action="/analyze" method="post">
+            <input type="text" name="url" placeholder="e.g., https://www.example.com" required>
+            <input type="submit" value="Analyze Now">
+        </form>
+    </div>
+</body>
+</html>

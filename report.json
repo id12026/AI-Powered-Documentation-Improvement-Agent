@@ -1,0 +1,30 @@
+{
+    "url": "https://woxsen.edu.in/",
+    "analysis": {
+        "readability": {
+            "score": {
+                "flesch_kincaid": 36.90904614932393,
+                "gunning_fog": 37.63015873015873
+            },
+            "assessment": "Flesch-Kincaid Grade: 36.9, Gunning Fog: 37.6. The content is complex for a general audience. Long sentences may reduce clarity. ",
+            "suggestions": [
+                "Simplify sentences, e.g., replace 'utilize' with 'use'.",
+                "Break sentences longer than 15 words into shorter ones, e.g., 'Use our tools. Improve your results.'"
+            ]
+        },
+        "structure": {
+            "assessment": "Page has 72 headings, 60 paragraphs, and 97 lists. ",
+            "suggestions": []
+        },
+        "completeness": {
+            "assessment": "The content provides an overview. ",
+            "suggestions": []
+        },
+        "style": {
+            "assessment": "The tone is generally clear. Some sentences are too long, reducing readability. ",
+            "suggestions": [
+                "Shorten long sentences, e.g., split 'Executive Education Certification Course...' into shorter parts."
+            ]
+        }
+    }
+}
