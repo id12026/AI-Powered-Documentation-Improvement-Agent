@@ -156,6 +156,20 @@ All generated files are saved in the `Output/` folder in the repository.
 > 📁 You can view all output files inside the `/Output/` directory after running the tool.
 
 ---
+
+## 📸 Screenshots 
+
+![WhatsApp Image 2025-05-31 at 20 05 47_02f4b87e](https://github.com/user-attachments/assets/a1968019-dd4e-4be4-b757-45c0e98e52cf)
+
+![WhatsApp Image 2025-05-31 at 20 04 19_055af265](https://github.com/user-attachments/assets/4bad552e-1db4-45aa-a010-ef5bdc1c9f73)
+![image](https://github.com/user-attachments/assets/bee89230-45f8-4fd5-815c-2ad774201f2d)
+
+![WhatsApp Image 2025-05-31 at 20 05 03_f918f5b4](https://github.com/user-attachments/assets/6f81c51a-814f-449f-b08c-665bb4145abc)
+
+![WhatsApp Image 2025-05-31 at 20 05 36_71dde27a](https://github.com/user-attachments/assets/82cd50c2-bf9e-4a89-9427-a0de1bb18c5a)
+
+---
+
 ## ⚙️ Built With
 
 * **Backend**: Python, Flask
@@ -218,7 +232,7 @@ mkdir Output
 ---
 
 
-##⚠️ Challenges Faced
+## ⚠️ Challenges Faced
 *  HTML Variability: MoEngage articles use inconsistent HTML, making clean text extraction tricky.
 
 *  Output Formatting: Needed regex cleanup to fix double periods and repeated headers in revised content.
@@ -243,10 +257,10 @@ mkdir Output
 ## ✍️ Author & Contact
 Feel free to reach out or contribute!
 
-# 📬 Mohitha Bandi - 22WU0105037
-# 📧 mohitha.bandi_2026@woxsen.edu.in
-# 🌐 LinkedIn : www.linkedin.com/in/mohitha-bandi-6b563826b
-# 🌐 GitHub : https://github.com/id12026
+## 📬 Mohitha Bandi - 22WU0105037 - Data Science
+## 📧 mohitha.bandi_2026@woxsen.edu.in
+## 🌐 LinkedIn : www.linkedin.com/in/mohitha-bandi-6b563826b
+## 🌐 GitHub : https://github.com/id12026
 
 
 
