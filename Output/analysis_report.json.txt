@@ -1,0 +1,32 @@
+{
+    "url": "https://developers.moengage.com/hc/en-us",
+    "analysis": {
+        "readability": {
+            "score": {
+                "flesch_kincaid": 15.804514106583074,
+                "gunning_fog": 18.705329153605017
+            },
+            "assessment": "Flesch-Kincaid Grade: 15.8, Gunning Fog: 18.7. The content is complex for a general audience. Long sentences may reduce clarity. ",
+            "suggestions": [
+                "Simplify sentences, e.g., replace 'utilize' with 'use'.",
+                "Break sentences longer than 15 words into shorter ones, e.g., 'Use our tools. Improve your results.'"
+            ]
+        },
+        "structure": {
+            "assessment": "Page has 18 headings, 18 paragraphs, and 260 lists. ",
+            "suggestions": []
+        },
+        "completeness": {
+            "assessment": "The content provides an overview. Lack of examples may limit understanding. ",
+            "suggestions": [
+                "Include practical examples, e.g., 'Here\u2019s how to use this feature.'"
+            ]
+        },
+        "style": {
+            "assessment": "The tone is generally clear. Some sentences are too long, reducing readability. ",
+            "suggestions": [
+                "Shorten long sentences, e.g., split 'Developer Guide iOS SDKNative MoEngage S...' into shorter parts."
+            ]
+        }
+    }
+}
