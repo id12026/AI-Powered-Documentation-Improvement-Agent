@@ -1,14 +1,16 @@
-{
-  "url": "https://developers.moengage.com/hc/en-us",
-  "original_text": "Developer Guide iOS SDK. Native MoEngage SDKs for iOS. Android SDK. Web SDK. Personalize SDK. Ecommerce Platforms. React Native SDK. Flutter SDK. Cordova SDK. Unity SDK. Capacitor SDK. Ionic SDK. TV and OTT Integrations. Components for SDK. API. Partner Integrations. Release Notes.",
-  "revised_text": "MoEngage provides a comprehensive set of SDKs for iOS, Android, and Web platforms. SDKs for cross-platform frameworks such as React Native, Flutter, Cordova, Unity, Capacitor, and Ionic are also supported. The platform enables TV and OTT integration, robust API capabilities for user and event tracking, and seamless partner integrations to complement marketing strategies. Refer to release notes for the latest updates.",
-  "output_file": "revised_content.txt"
-}
+[
+  {
+    "url": "https://developers.moengage.com/hc/en-us",
+    "original_text": "Developer Guide iOS SDK. Native MoEngage SDKs for iOS. Android SDK. Web SDK. Personalize SDK. Ecommerce Platforms. React Native SDK. Flutter SDK. Cordova SDK. Unity SDK. Capacitor SDK. Ionic SDK. TV and OTT Integrations. Components for SDK. API. Partner Integrations. Release Notes.",
+    "revised_text": "MoEngage provides a comprehensive set of SDKs for iOS, Android, and Web platforms. SDKs for cross-platform frameworks such as React Native, Flutter, Cordova, Unity, Capacitor, and Ionic are also supported. The platform enables TV and OTT integration, robust API capabilities for user and event tracking, and seamless partner integrations to complement marketing strategies. Refer to release notes for the latest updates.",
+    "output_file": "revised_content.txt"
+  },
 
-
-{
-  "url": "https://help.moengage.com/hc/en-us/articles/360058616131-Delivery-Types-MoEngage-Channels",
-  "original_text": "User Guide Campaigns and Channels Getting Started Introduction Delivery or orchestration types help marketers set up multiple ways to send messages...",
-  "revised_text": "Delivery or management types help marketers set up. multiple ways to send messages. MoEngage supports multiple orchestrations or delivery types for. campaigns on various channels. up campaigns based on specific events. PushEmailSMS &. RCSCardsWhatsAppFacebook AudienceGoogle Ads AudienceConnectors. Location Triggered allows you to send messages to. your audience that are triggered on. Allows you. to send messages that are triggered. You can. Event Triggered. MoEngage supports multiple orchestrations or delivery types for. campaigns on various channels. The. Inbound channels (like In-app / On-site) support Event. Triggered and other real-. Geo Fences allow you.  to send messages to. your audience that are triggered on the user. to send. Messages are triggered locally based on any activity. on a device. Messages are triggered. Allows you to send. Supports offline delivery of messages as well.. Allows you to send messages that are triggered. based on any defined business event. Push. SMS & RCS",
-  "output_file": "revised_content.txt"
-}
+  
+  {
+    "url": "https://help.moengage.com/hc/en-us/articles/360058616131-Delivery-Types-MoEngage-Channels",
+    "original_text": "User Guide Campaigns and Channels Getting Started Introduction Delivery or orchestration types help marketers set up multiple ways to send messages...",
+    "revised_text": "MoEngage supports multiple orchestration or delivery types for campaigns across various channels. Marketers can set up campaigns based on specific triggers such as events, user location, or defined business criteria.\n\n- Event-Triggered: Messages are triggered based on user actions or business events.\n- Location-Triggered (Geo-fences): Messages are sent when a user enters or exits a predefined location.\n- Inbound Channels: Channels like In-app or On-site support real-time, event-triggered messaging.\n- Offline Delivery: Messages can be queued and delivered when the device reconnects.\n\nSupported channels include Push, Email, SMS & RCS, Cards, WhatsApp, Facebook Audience, Google Ads Audience, and Connectors.",
+    "output_file": "revised_content.txt"
+  }
+]
