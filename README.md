@@ -1,10 +1,10 @@
 # 🧩 AI-Powered Documentation Improvement Agent
 
-This project provides an AI-powered tool that analyzes and revises MoEngage documentation  (like https://help.moengage.com/hc/en-us/articles/...) - easier to read for marketers who aren’t super technical.
-
-The system has two main components:
+This project provides an AI-powered tool that analyzes and rewrites MoEngage documentation, making it clearer and easier to understand—especially for marketers without a technical background.
 
 ---
+The system has two main components:
+
 
 ## 🔍 Task 1: Documentation Analyzer Agent
 
