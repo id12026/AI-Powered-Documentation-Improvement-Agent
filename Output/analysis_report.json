@@ -6,8 +6,9 @@
                 "flesch_kincaid": 15.804514106583074,
                 "gunning_fog": 18.705329153605017
             },
-            "assessment": "Flesch-Kincaid Grade: 15.8, Gunning Fog: 18.7. The content is complex for a general audience. Long sentences may reduce clarity. ",
+            "assessment": "Flesch-Kincaid Grade: 15.8, Gunning Fog: 18.7. The tone may feel technical or neutral. The content is complex for a general audience. Long sentences may reduce clarity. ",
             "suggestions": [
+                "Use a positive, engaging tone, e.g., 'Easily explore our features'.",
                 "Simplify sentences, e.g., replace 'utilize' with 'use'.",
                 "Break sentences longer than 15 words into shorter ones, e.g., 'Use our tools. Improve your results.'"
             ]
@@ -30,5 +31,3 @@
         }
     }
 }
-
-
