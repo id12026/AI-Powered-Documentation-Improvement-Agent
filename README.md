@@ -59,7 +59,7 @@ Minimalist UI that lets users paste a URL, submit, and get results—no technica
 ## 📁 Project Structure
 
 ```
-MoEngage-Web-Analyzer/
+MoEngage/
 ├── backend/
 │   ├── doc_analyzer.py         # Web content analyzer
 │   ├── doc_revision.py         # Text simplifier and reviser
