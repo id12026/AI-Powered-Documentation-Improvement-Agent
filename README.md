@@ -264,7 +264,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Feel free to reach out or contribute!
 
 ## 📬 Mohitha Bandi - 22WU0105037 - Data Science
-## 📧 mohitha.bandi_2026@woxsen.edu.in
+## 📧 mohitha.bandi_2026@woxsen.edu.in or mohitha12026@gmail.com
 ## 🌐 LinkedIn : www.linkedin.com/in/mohitha-bandi-6b563826b
 ## 🌐 GitHub : https://github.com/id12026
 
