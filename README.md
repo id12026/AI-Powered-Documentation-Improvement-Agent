@@ -1,148 +1,145 @@
-AI-Powered Documentation Improvement Agent
-This project is a Python-based solution for analyzing and improving MoEngage public documentation articles (e.g., https://help.moengage.com/hc/en-us/articles/...). It features two agents:
-
-Documentation Analyzer Agent: Analyzes articles for readability, structure, completeness, and style, producing actionable suggestions for non-technical marketers.
-Documentation Revision Agent: Automatically revises content based on analysis suggestions, enhancing clarity and engagement.
-
-Built with Flask, BeautifulSoup, and Google Gemini API, the project emphasizes backend processing with minimal frontend, delivering outputs in JSON, Markdown, and plain text formats.
+AI-Powered Webpage Content Analyzer and Reviser
+This project is a Flask-based web application designed to analyze and revise MoEngage documentation articles (e.g., https://help.moengage.com/hc/en-us/articles/...) to improve clarity and usability for non-technical marketers. It features a backend-focused implementation using BeautifulSoup for web scraping and Google Gemini API for text analysis and simplification, with a minimal frontend styled in a dark tech theme using Roboto Mono and Montserrat fonts.
 Features
 
-Analysis: Evaluates MoEngage documentation for:
-Readability (Flesch-Kincaid, Gunning Fog, tone via Gemini API).
-Structure (headings, paragraphs, lists).
-Completeness (detail, examples).
-Style (clarity, conciseness, action-oriented language per Microsoft Style Guide).
-
-
-Revision: Simplifies text, replaces jargon, uses second-person pronouns, and splits long sentences.
-Outputs: Generates analysis_report.json, revised__content.md, revised_content.txt, and revision_result.json in Output/.
-Backend Focus: Modular code with logging, error handling, and no UI optimization.
-Dependencies: Python, BeautifulSoup, textstat, Flask, NLTK, Google Gemini API.
+Analyze Documentation: Evaluates readability, structure, completeness, and style of MoEngage documentation URLs, providing actionable suggestions tailored for marketers.
+Revise Content: Simplifies text, replaces jargon, uses second-person pronouns, and splits long sentences, producing revised versions in multiple formats.
+Backend Focus: Optimized for server-side processing with modular code, detailed logging, and robust error handling.
+Output: Generates analysis_report.json, revised__content.md, revised_content.txt, and revision_result.json in the Output/ directory.
+Dependencies: Relies on BeautifulSoup, Google Gemini API, and Python libraries (requests, textstat, Flask, NLTK).
 
 Project Structure
 MoEngage-Web-Analyzer/
 ├── backend/
-│   ├── doc_analyzer.py      # Analyzer agent logic
-│   ├── doc_revision.py      # Revision agent logic
-├── app.py                   # Flask application
+│   ├── doc_analyzer.py      # Analyzes webpage content
+│   ├── doc_revision.py      # Revises webpage content
+├── app.py                   # Flask web application
 ├── templates/
-│   ├── index.html           # Input form
-│   ├── result.html          # Result display
+│   ├── index.html           # Input form page
+│   ├── result.html          # Displays analysis and revision results
 ├── static/
-│   ├── style.css            # Minimal styling
+│   ├── style.css            # CSS styling
 ├── Output/
 │   ├── analysis_report.json # Analysis report
-│   ├── revised__content.md  # Revised Markdown
-│   ├── revised_content.txt  # Revised plain text
-│   ├── revision_result.json # Revision details
+│   ├── revised__content.md  # Revised content in Markdown
+│   ├── revised_content.txt  # Revised content in plain text
+│   ├── revision_result.json # Revision result
 ├── README.md                # Project documentation
 
 Setup Instructions
 
-Navigate to Directory:
-cd /path/to/MoEngage-Web-Analyzer
+Navigate to Project Directory:
+cd "C:\Users\Reliance Digital\WEB DEVELOPMENT\MoEngage-Web-Analyzer"
 
 
-Create and Activate Virtual Environment:Ensure Python 3.8+ is installed:
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
+Activate Virtual Environment:Ensure Python 3.8+ is installed and activate the virtual environment:
+"C:\Users\Reliance Digital\WEB DEVELOPMENT\MI\venv\Scripts\activate"
+
+If the virtual environment doesn’t exist, create it:
+python -m venv "C:\Users\Reliance Digital\WEB DEVELOPMENT\MI\venv"
+"C:\Users\Reliance Digital\WEB DEVELOPMENT\MI\venv\Scripts\activate"
 
 
-Install Dependencies:
+Install Dependencies:Install required Python packages:
 pip install requests beautifulsoup4 textstat flask nltk
 python -c "import nltk; nltk.download('punkt')"
 
 
-Configure Google Gemini API Key:
+Set Up Google Gemini API Key:
 
-Obtain a key at https://aistudio.google.com/app/apikey.
+Sign up at https://aistudio.google.com/app/apikey to obtain an API key.
 Update backend/doc_analyzer.py and backend/doc_revision.py:GEMINI_API_KEY = "your-valid-gemini-api-key"
 
 
 
 
-Save Files:
+Save Project Files:
 
-Place doc_analyzer.py, doc_revision.py in backend/.
-Place app.py, README.md in root.
-Place index.html, result.html in templates/.
+Place doc_analyzer.py and doc_revision.py in backend/.
+Place app.py in the root directory (MoEngage-Web-Analyzer/).
+Place index.html and result.html in templates/.
 Place style.css in static/.
-Create Output/:mkdir Output
+Save this README.md in the root directory.
+Create the Output/ directory:mkdir Output
 
 
 
 
-Run Application:
+Run the Application:Start the Flask server:
 python app.py
 
-Access at http://127.0.0.1:5000/ in a browser.
+Open http://127.0.0.1:5000/ in a browser to access the interface.
 
 Usage:
 
-Enter a MoEngage URL (e.g., https://help.moengage.com/hc/en-us/articles/...).
-Submit to generate analysis and revised content.
-Outputs are saved in Output/.
+Enter a MoEngage documentation URL (e.g., https://help.moengage.com/hc/en-us/articles/...) in the input form.
+Submit to view the analysis report, revision result, and revised content.
+Outputs are saved in Output/ as analysis_report.json, revised__content.md, revised_content.txt, and revision_result.json.
 
 
 
 Assumptions
 
-URL Accessibility: MoEngage documentation is publicly accessible without CAPTCHAs or authentication.
-HTML Content: Articles use static HTML with standard tags (<article>, <p>). JavaScript-heavy pages may limit extraction.
-Gemini API: Available with a valid key; fallbacks return original text.
-Language: Content is English for accurate analysis.
-Environment: User has Python 3.8+ and a compatible OS (Windows/Linux/Mac).
-Browser: Interface works in Chrome, Firefox, or Edge.
+URL Accessibility: MoEngage documentation URLs are publicly accessible without authentication or CAPTCHAs. BeautifulSoup cannot handle dynamic or protected content.
+HTML Structure: Webpages have standard HTML elements (e.g., <article>, <main>, <p>). JavaScript-heavy pages may yield limited content.
+Gemini API Availability: Google Gemini API is accessible with a valid key, with fallbacks (e.g., original text) for failures.
+User Environment: Windows system with Python 3.8+ and a virtual environment at C:\Users\Reliance Digital\WEB DEVELOPMENT\MI\venv.
+Content Language: Documentation is in English for accurate readability analysis and revision.
+Browser Compatibility: Interface works in modern browsers (Chrome, Firefox, Edge), though UI is not optimized.
 
 Design Choices
 
-Flask: Lightweight framework for rapid backend development.
-BeautifulSoup: Efficient for HTML parsing, with flexible selectors to handle varied MoEngage page structures.
-Google Gemini API: Chosen for tone analysis and text simplification, optimized for marketer-friendly revisions.
-Modularity: Separates analysis (doc_analyzer.py) and revision (doc_revision.py) for maintainability.
-Readability: Uses textstat for Flesch-Kincaid/Gunning Fog, enhanced by Gemini for qualitative tone assessment.
-Style Guidelines: Focuses on clarity, conciseness, and second-person pronouns (Microsoft Style Guide), implemented via regex and LLM.
-Outputs: Multiple formats (JSON, Markdown, text) for flexibility, stored in Output/ for organization.
-Logging: Detailed logs for debugging scraping, API calls, and revisions.
+Flask Backend: Chosen for simplicity and Python integration, ideal for backend-focused tasks.
+Modular Architecture: Separates analysis (doc_analyzer.py) and revision (doc_revision.py) in backend/ for maintainability.
+BeautifulSoup Scraping: Lightweight HTML parsing, avoiding external services, with flexible selectors for robustness.
+Google Gemini API: Used for tone analysis and text simplification, tailored for marketers’ needs with specific prompts.
+Output Management: Centralized in Output/ with multiple formats (JSON, Markdown, text) for flexibility and accessibility.
+Logging: Detailed logs for scraping, API calls, and revisions aid debugging.
+Style Guidelines: Focuses on clarity, conciseness, and second-person pronouns, aligning with Microsoft Style Guide for customer-focused documentation.
 
 Challenges
 
-JavaScript Content: BeautifulSoup misses dynamic content. Mitigated with robust selectors; future improvement could use Selenium.
-Gemini API: Prompt engineering was needed for consistent tone analysis and simplification. Addressed with specific prompts and input limits.
-Output Quality: Initial punctuation issues (double periods, concatenated words) were fixed in apply_suggestions with regex cleanup.
-Revision Scope: Limited to readability and style due to complexity. Completeness suggestions (e.g., examples) are partially addressed via clarity improvements.
-Rate Limits: Gemini API free tier limits handled with input truncation and fallbacks.
+BeautifulSoup Limitations: JavaScript-rendered content (common in MoEngage pages) is not parsed. Mitigated with flexible selectors and fallback text.
+Gemini API Integration: Required prompt engineering for reliable tone analysis and simplification. Addressed with targeted prompts and input limits.
+Output Formatting: Punctuation errors (e.g., double periods) and header repetition in revised__content.md were fixed by enhancing text cleanup in apply_suggestions.
+Revision Quality: Meaningful revisions for technical content were challenging. Combined regex transformations with Gemini simplification.
+API Rate Limits: Gemini API free tier limits risked failures. Mitigated by limiting input size and using fallbacks.
 
 Troubleshooting
 
-Gemini API Failure:
-Verify key at https://aistudio.google.com/app/apikey.
-Test:curl -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=your-key" -H "Content-Type: application/json" -d '{"contents":[{"parts":[{"text":"Hello"}]}]}'
+Gemini API Errors:
+Verify the API key at https://aistudio.google.com/app/apikey.
+Test with:curl -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=your-key" -H "Content-Type: application/json" -d '{"contents":[{"parts":[{"text":"Hello"}]}]}'
 
 
 
 
-Scraping Issues:
-Check HTML structure and update selectors in backend/doc_analyzer.py (e.g., soup.find('div', class_='custom-class')).
+Content Extraction Failures:
+Inspect webpage HTML (right-click, “View Source”) and update fetch_article_content selectors in backend/doc_analyzer.py.
+Example: Add soup.find('div', class_='custom-class') for specific sites.
 
 
-Missing Outputs:
-Ensure Output/ exists and check write permissions.
-Review logs for errors.
+Output Files Missing:
+Ensure Output/ exists (mkdir Output).
+Check logs for file-writing errors (e.g., permissions).
 
 
-Virtual Environment:
-Recreate if issues persist:python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate
+Virtual Environment Issues:
+Recreate if corrupted:python -m venv "C:\Users\Reliance Digital\WEB DEVELOPMENT\MI\venv"
+"C:\Users\Reliance Digital\WEB DEVELOPMENT\MI\venv\Scripts\activate"
 pip install requests beautifulsoup4 textstat flask nltk
 
 
 
 
+Interface Rendering:
+Clear browser cache or test in Chrome/Firefox.
+Verify style.css is in static/.
+
+
 
 Example Outputs
-Below are outputs for two MoEngage URLs, demonstrating Task 1 (Analyzer) and Task 2 (Revision).
+Below are outputs for two MoEngage documentation URLs, demonstrating the analyzer and revision agents.
 Example 1: MoEngage Developer Portal
 
 URL: https://developers.moengage.com/hc/en-us
@@ -183,17 +180,17 @@ Output/analysis_report.json:{
 
 Output/revised__content.md:# Revised Webpage Content: https://developers.moengage.com/hc/en-us
 
-MoEngage SDKs support iOS, Android, web, React Native, Flutter, and Unity. You can use MoEngage with Unity mobile apps. MoEngage SDKs also support Capacitor and Ionic apps. The SDK connects to TVs, streaming services, and integrates with many marketing partners. New SDK updates are available. Need help? Let us help you!
+MoEngage SDKs support iOS, Android, web, React Native, Flutter, and Unity. MoEngage works with Unity mobile apps. MoEngage SDKs also support Capacitor and Ionic apps. MoEngage's SDK works with Ionic and other apps, connects to TVs and streaming services, and integrates with many marketing partners. New SDK updates are available. Need help? Let us help you!
 
 
-Output/revised_content.txt:MoEngage SDKs support iOS, Android, web, React Native, Flutter, and Unity. You can use MoEngage with Unity mobile apps. MoEngage SDKs also support Capacitor and Ionic apps. The SDK connects to TVs, streaming services, and integrates with many marketing partners. New SDK updates are available. Need help? Let us help you!
+Output/revised_content.txt:MoEngage SDKs support iOS, Android, web, React Native, Flutter, and Unity. MoEngage works with Unity mobile apps. MoEngage SDKs also support Capacitor and Ionic apps. MoEngage's SDK works with Ionic and other apps, connects to TVs and streaming services, and integrates with many marketing partners. New SDK updates are available. Need help? Let us help you!
 
 
 Output/revision_result.json (partial):[
     {
         "url": "https://developers.moengage.com/hc/en-us",
         "original_text": "Developer Guide iOS SDKNative MoEngage SDKs for iOS iOS SDKNative MoEngage SDKs for iOS...",
-        "revised_text": "MoEngage SDKs support iOS, Android, web, React Native, Flutter, and Unity. You can use MoEngage with Unity mobile apps...",
+        "revised_text": "MoEngage SDKs support iOS, Android, web, React Native, Flutter, and Unity. MoEngage works with Unity mobile apps...",
         "output_files": ["Output/revised__content.md", "Output/revised_content.txt"]
     },
     ...
@@ -212,7 +209,7 @@ Output/analysis_report.json:{
                 "flesch_kincaid": 12.5,
                 "gunning_fog": 15.3
             },
-            "assessment": "Flesch-Kincaid Grade: 12.5, Gunning Fog: 15.3. The tone is technical. Content is complex for marketers. Long sentences reduce clarity.",
+            "assessment": "Flesch-Kincaid Grade: 12.5, Gunning Fog: 15.3. The tone is technical. The content is complex for marketers. Long sentences reduce clarity.",
             "suggestions": [
                 "Use a positive tone, e.g., 'You can easily set up campaigns'.",
                 "Simplify sentences, e.g., replace 'orchestration' with 'delivery'.",
@@ -244,21 +241,21 @@ Output/analysis_report.json:{
 
 Output/revised__content.md:# Revised Webpage Content: https://help.moengage.com/hc/en-us/articles/360058616131-Delivery-Types-MoEngage-Channels
 
-MoEngage supports multiple delivery types for campaigns across various channels. You can set up campaigns based on events, user location, or business criteria.
+MoEngage supports multiple delivery types for campaigns across various channels. You can set up campaigns based on specific triggers such as events, user location, or business criteria.
 
 - Event-Triggered: You can send messages based on user actions or business events.
 - Location-Triggered (Geo-fences): You can send messages when a user enters or exits a location.
-- Inbound Channels: In-app or On-site channels support real-time messaging.
+- Inbound Channels: In-app or On-site channels support real-time, event-triggered messaging.
 - Offline Delivery: You can queue messages for delivery when the device reconnects.
 
 Supported channels include Push, Email, SMS, RCS, Cards, WhatsApp, Facebook Audience, Google Ads Audience, and Connectors.
 
 
-Output/revised_content.txt:MoEngage supports multiple delivery types for campaigns across various channels. You can set up campaigns based on events, user location, or business criteria.
+Output/revised_content.txt:MoEngage supports multiple delivery types for campaigns across various channels. You can set up campaigns based on specific triggers such as events, user location, or business criteria.
 
 - Event-Triggered: You can send messages based on user actions or business events.
 - Location-Triggered (Geo-fences): You can send messages when a user enters or exits a location.
-- Inbound Channels: In-app or On-site channels support real-time messaging.
+- Inbound Channels: In-app or On-site channels support real-time, event-triggered messaging.
 - Offline Delivery: You can queue messages for delivery when the device reconnects.
 
 Supported channels include Push, Email, SMS, RCS, Cards, WhatsApp, Facebook Audience, Google Ads Audience, and Connectors.
@@ -269,7 +266,7 @@ Output/revision_result.json (partial):[
     {
         "url": "https://help.moengage.com/hc/en-us/articles/360058616131-Delivery-Types-MoEngage-Channels",
         "original_text": "User Guide Campaigns and Channels Getting Started Introduction Delivery or orchestration types help marketers set up multiple ways to send messages...",
-        "revised_text": "MoEngage supports multiple delivery types for campaigns across various channels. You can set up campaigns based on events, user location, or business criteria...",
+        "revised_text": "MoEngage supports multiple delivery types for campaigns across various channels. You can set up campaigns based on specific triggers such as events, user location, or business criteria...",
         "output_files": ["Output/revised__content.md", "Output/revised_content.txt"]
     }
 ]
@@ -278,15 +275,15 @@ Output/revision_result.json (partial):[
 
 Future Improvements
 
-Dynamic Content: Use Selenium for JavaScript-rendered MoEngage pages.
-Bulk Analysis: Support multiple URLs in a single run.
-Multilingual Support: Handle non-English documentation with Gemini.
-Performance: Cache API responses to reduce Gemini calls.
-Customization: Allow user-defined output formats or file names.
+Dynamic Content: Integrate a headless browser (e.g., Selenium) to parse JavaScript-rendered MoEngage pages.
+Batch Processing: Support multiple URLs for bulk analysis and revision.
+Multilingual Support: Extend to non-English content using Gemini’s capabilities.
+Performance: Cache Gemini API responses to reduce calls and improve speed.
+Output Customization: Allow users to specify output file names or formats via the interface.
 
 Notes
 
-Second Analysis Report: The analysis_report.json for the second URL is synthesized based on provided revision outputs and typical patterns. Run the application to generate the exact report.
-Fixes: Punctuation issues (e.g., double periods) and header repetition in revised__content.md were resolved in backend/doc_revision.py using regex cleanup and URL-specific headers.
-Style Focus: Revision agent prioritizes readability (simplification, sentence splitting) and style (jargon removal, second-person pronouns), as allowed for partial implementation in Task 2.
+Example Outputs: The second example’s analysis_report.json is synthesized based on the provided revision_result.json and typical output patterns, as the actual analysis for the second URL wasn’t provided. Run the application on https://help.moengage.com/hc/en-us/articles/360058616131-Delivery-Types-MoEngage-Channels to generate the exact report.
+Punctuation Fixes: Applied in backend/doc_revision.py to resolve issues like double periods and concatenated words (e.g., “PushEmailSMS”).
+Header Repetition: Fixed in revised__content.md by including URL-specific headers.
 
