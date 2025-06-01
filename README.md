@@ -59,10 +59,10 @@ MoEngage-Web-Analyzer/
 
 ```bash
 git clone https://github.com/your-username/MoEngage-Doc-Improver.git
-cd MoEngage-Doc-Improver
+cd MoEngage
 ```
 
-2. Create Virtual Environment
+###2. Create Virtual Environment
 
 ```bash
 python -m venv venv
