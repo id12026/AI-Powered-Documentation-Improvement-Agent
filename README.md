@@ -1,29 +1,58 @@
+# 🧩 AI-Powered Documentation Improvement Agent
+
+This project provides an AI-powered tool that analyzes and revises MoEngage documentation  (like https://help.moengage.com/hc/en-us/articles/...) - easier to read for marketers who aren’t super technical.
+
+The system has two main components:
+
 ---
 
-# AI-Powered Webpage Content Analyzer and Reviser
+## 🔍 Task 1: Documentation Analyzer Agent
 
-A **Flask-based web application** that analyzes and revises MoEngage documentation to improve **clarity**, **readability**, and **usability** for **non-technical marketers**. It leverages **BeautifulSoup** for web scraping and **Google Gemini API** for AI-powered text simplification. Features a minimalistic, dark-themed frontend styled with **Roboto Mono** and **Montserrat** fonts.
+### 🔸 What It Does:
+
+* **Analyzer**: Reviews MoEngage help articles for:
+
+  * **Readability** – Uses Flesch-Kincaid, Gunning Fog, and Gemini API tone analysis.
+  * **Structure** – Checks clarity of headings, lists, and paragraph flow.
+  * **Completeness** – Identifies missing explanations or lack of examples.
+  * **Style** – Assesses clarity, tone, and friendliness per Microsoft Style Guide.
+
+
+---
+
+## ✏️ Task 2: Documentation Revision Agent
+
+* **Reviser**: Uses those insights from task 1 to generate improvement suggestions.
+### 🔸 What It Does:
+
+* **Rewrites Content**:
+
+  * Simplifies complex language.
+  * Uses second-person ("you") for a conversational tone.
+  * Breaks down long or technical sentences.
+
+* **Saves Output Files** in `/Output/`:
+
+  * `analysis_report.json`
+  * `revised_content.md`
+  * `revised_content.txt`
+  * `revision_result.json`
 
 ---
 
 ## 🚀 Features
 
-* **Analyze Documentation**
-  Evaluates MoEngage documentation for readability, structure, completeness, and style, providing actionable suggestions tailored for marketers.
+🚀 Features
+* **AI-Powered Analysis** : Evaluates MoEngage documentation for readability, structure, completeness, and style using traditional metrics and the Gemini LLM.
+* **Smart Content Revision** : Rewrites documentation to be simpler, clearer, and more personal—ideal for non-technical marketers.
+* **Multi-Format Output** : Saves revised content and analysis reports in Markdown, plain text, and JSON formats for easy sharing and review.
+* **LLM Integration**: Uses Google Gemini 1.5 Flash for tone analysis, rewriting, and content optimization.
+* **Clean and Modular Backend** : Built with Flask and Python, with a clear separation of concerns for easier maintenance and expansion.
+* **User-Friendly Web Interface** :
+Minimalist UI that lets users paste a URL, submit, and get results—no technical skills required.
+* **Robust Logging and Error Handling** : Provides detailed logs to help with debugging and transparency of API responses and processing steps.
 
-* **Revise Content**
-  Simplifies text, removes jargon, uses second-person pronouns, and breaks long sentences. Outputs are saved in Markdown, plain text, and JSON formats.
-
-* **Backend-Focused**
-  Modular and optimized server-side architecture with detailed logging and robust error handling.
-
-* **Clean Output**
-  Generates the following files in the `Output/` directory:
-
-  * `analysis_report.json`
-  * `revised__content.md`
-  * `revised_content.txt`
-  * `revision_result.json`
+---
 
 ---
 
@@ -97,30 +126,68 @@ Then visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
 ---
 
-## 🧪 Usage
 
-1. Enter a MoEngage documentation URL (e.g., `https://help.moengage.com/hc/en-us/articles/...`)
-2. Submit the form.
-3. View the analysis, revised content, and download output files.
+## 🧪 How to Use
+Paste a MoEngage article URL (e.g., https://help.moengage.com/hc/en-us/articles/...).
+
+Click Submit.
+
+The tool:
+
+Analyzes the doc.
+
+Rewrites it.
+
+Saves the results in the /Output/ folder.
+
+---
+
+## 📂 Output Files
+
+All generated files are saved in the `Output/` folder in the repository.
+
+| File Name                 | Purpose                                                            |
+|---------------------------|--------------------------------------------------------------------|
+| `analysis_report.json`    | Readability, structure, completeness, and style scores with tips   |
+| `revised_content.md`      | Simplified and marketer-friendly version in Markdown format        |
+| `revised_content.txt`     | Plain text version of the revised content                          |
+| `revision_result.json`    | Detailed change log: original vs. revised text, tracked by section |
+
+> 📁 You can view all output files inside the `/Output/` directory after running the tool.
+
+---
+## ⚙️ Built With
+
+* **Backend**: Python, Flask
+* **Web Scraping**: BeautifulSoup
+* **AI/LLM**: Google Gemini 1.5 Flash (via Gemini API)
+* **Text Analysis**: NLTK, `textstat`
+* **Frontend**: HTML, CSS (dark-themed UI)
+* **Output Formats**: Markdown, plain text, JSON
 
 ---
 
 ## 🧠 Assumptions
 
 * URLs are publicly accessible (no login, CAPTCHA).
+* MoEngage documentation is consistent.
 * Documentation uses standard HTML structure.
-* English language is used for content.
 * Valid Google Gemini API key is configured.
+* Output revisions are saved/displayed for user.
+* Users are non-technical marketers looking for clearer, simpler content.
 * Modern browser used (Chrome, Firefox, Edge).
 
 ---
 
 ## 🎨 Design Choices
 
-* **Modular Code**: Separation of logic for maintainability.
-* **Google Gemini API**: For AI-based readability improvements.
-* **Dark Theme UI**: Designed with a tech-centric aesthetic.
-* **Logging**: Detailed logs for debugging and auditing.
+* Used a modular Python backend to separate analysis, revision, and routing logic.
+* Chose Flask for simplicity and quick setup of the web interface.
+* Integrated Google Gemini 1.5 Flash for high-quality rewriting and tone adjustments.
+* Followed the Microsoft Style Guide to guide tone and writing style
+* Applied regex cleanup for output formatting (e.g., removing double punctuation, repeated headers)
+* Designed a minimal, dark-themed UI to reduce visual clutter and align with tech users
+* Focused on server-side processing for better control, performance, and logging
 
 ---
 
@@ -150,23 +217,37 @@ mkdir Output
 
 ---
 
-## 🧾 Outputs
 
+##⚠️ Challenges Faced
+*  HTML Variability: MoEngage articles use inconsistent HTML, making clean text extraction tricky.
 
+*  Output Formatting: Needed regex cleanup to fix double periods and repeated headers in revised content.
+
+*  Technical Content Revision: Simplifying complex docs was challenging—used a mix of custom rules and Gemini API for clarity.
+
+*  Multi-format Saving: Outputting clean content in Markdown, TXT, and JSON required careful handling.
+
+*  User-Friendliness: Focused on keeping the tool simple and intuitive for non-technical users.
+---
 
 ## 🌟 Future Improvements
 
-* ✅ Support JavaScript-rendered content via Selenium or Playwright
-* ✅ Batch processing for multiple URLs
-* ✅ Multilingual support
-* ✅ Customizable output filenames
-* ✅ Gemini API response caching
+* ✅ Enable batch processing so users can analyze multiple MoEngage URLs at once.
+* ✅ Add multilingual support to handle documentation in languages other than English.
+* ✅ Allow users to customize output filenames or organize results by date or source.
+* ✅ Improve the UI with progress indicators and better usability for non-technical users.
+* ✅ Add support for switching between different LLMs like OpenAI, Gemini, or open-source models.
 
 ---
 
+## ✍️ Author & Contact
+Feel free to reach out or contribute!
 
-## 📬 Contact
+# 📬 Mohitha Bandi - 22WU0105037
+# 📧 mohitha.bandi_2026@woxsen.edu.in
+# 🌐 LinkedIn : www.linkedin.com/in/mohitha-bandi-6b563826b
+# 🌐 GitHub : https://github.com/id12026
 
-For queries or contributions, please open an [issue](https://github.com/your-repo/issues) or submit a [pull request](https://github.com/your-repo/pulls).
+
 
 
