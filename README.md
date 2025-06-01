@@ -1,5 +1,3 @@
-# AI-Powered-Documentation-Improvement-Agent
-
 AI-Powered Documentation Improvement Agent
 This project is a Python-based solution for analyzing and improving MoEngage public documentation articles (e.g., https://help.moengage.com/hc/en-us/articles/...). It features two agents:
 
