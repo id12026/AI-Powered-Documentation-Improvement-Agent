@@ -1,6 +1,0 @@
-{
-  "url": "https://developers.moengage.com/hc/en-us",
-  "original_text": "Developer Guide iOS SDK. Native MoEngage SDKs for iOS. Android SDK. Web SDK. Personalize SDK. Ecommerce Platforms. React Native SDK. Flutter SDK. Cordova SDK. Unity SDK. Capacitor SDK. Ionic SDK. TV and OTT Integrations. Components for SDK. API. Partner Integrations. Release Notes.",
-  "revised_text": "MoEngage provides a comprehensive set of SDKs for iOS, Android, and Web platforms. SDKs for cross-platform frameworks such as React Native, Flutter, Cordova, Unity, Capacitor, and Ionic are also supported. The platform enables TV and OTT integration, robust API capabilities for user and event tracking, and seamless partner integrations to complement marketing strategies. Refer to release notes for the latest updates.",
-  "output_file": "revised_content.txt"
-}
